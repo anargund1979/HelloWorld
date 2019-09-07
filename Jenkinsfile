@@ -1,23 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Stage1') {
-      parallel {
-        stage('Stage1') {
-          steps {
-            echo 'Stage 1 executing'
-          }
-        }
-        stage('Stage 2') {
-          steps {
-            build(job: 'hello', quietPeriod: 2)
-          }
-        }
+    stage('Build Asset') {
+      steps {
+        echo 'Building Assents'
       }
     }
-    stage('Blue stage1') {
+    stage('Test') {
       steps {
-        sleep 5
+        echo 'Testing Stuff'
       }
     }
   }
